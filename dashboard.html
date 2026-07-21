@@ -20,11 +20,11 @@
 
     <aside class="sidebar">
         <ul>
-            <li>Dashboard</li>
-            <li>Tasks</li>
-            <li>Notes</li>
-            <li>Timetable</li>
-            <li>Focus Timer</li>
+            <li onclick="showSection('dashboard')">Dashboard</li>
+            <li onclick="showSection('task')">Tasks</li>
+            <li onclick="showSection('notes')">Notes</li>
+            <li onclick="showSection('timetable')">Timetable</li>
+            <li onclick="showSection('timer')">Focus Timer</li>
         </ul>
     </aside>
     <main>
@@ -71,12 +71,13 @@
     <button>Reset</button>
 </section>
 
-<section class="timetable" id="tt" class="tt">
+<section class="timetable" id="timetable">
     <h2>Today's TimeTable</h2>
     <p>9:00 AM - English</p>
     <p>11:00 AM - Web Dev</p>
 </section>
 </main>
+<script src="dashboard.js"></script>
 
 </body>
 
