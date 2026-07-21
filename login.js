@@ -1,4 +1,4 @@
-function login(event){
+function login(event) {
     event.preventDefault();
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
@@ -18,10 +18,19 @@ function login(event){
                 })
             }
         )
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            alert(data.message);
-        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Login Successful!");
+                    window.location.href = "dashboard.html";
+                }
+                else {
+                    alert(data.message || "INvalid Username or Password");
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                alert("Something went wrong");
+            })
     }
-}
+};
