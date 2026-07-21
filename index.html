@@ -10,16 +10,17 @@
 <body>
     <div class="login-container">
         <h2>Focus Center Login</h2>
-        <form>
+        <form onsubmit="login(event)">
             <input type="username" id="username" placeholder="Username">
 
             <input type="password" id="password" placeholder="Password">
 
-            <button id="loginBtn">Login</button>
+            <button type="submit">Login</button>
         </form>
 
         <p>Still don't have an account? <a href="signup.html">Sign Up</a></p>
     </div>
+    <script src="login.js"></script>
 </body>
 
 </html>
