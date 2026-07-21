@@ -34,10 +34,15 @@ def new_user(user_data:user_info):
 def get():
     return user_login_info
 
-@app.post("user/task/{task_id}")
+@app.post("/user/task")
 def post_task(task:user_task_model):
     user_tasks.append(task)
+    task={}
     return{
         "message":"Task Added",
-        "task": task
     }
+
+@app.get("/tasks")
+def get_tasks():
+    return user_tasks
+
