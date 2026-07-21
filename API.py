@@ -51,3 +51,6 @@ def post_time(get_time:int):
     user_time.append(get_time)
     return "Data Saved"
     
+@app.get("/user/time")
+def get_time():
+    return user_time
