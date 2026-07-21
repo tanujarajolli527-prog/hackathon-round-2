@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from models import user_info
-from database import user_login_info
+from module import user_info, user_task_model
+from database import user_login_info, user_tasks
 
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -33,3 +33,11 @@ def new_user(user_data:user_info):
 @app.get("/users")
 def get():
     return user_login_info
+
+@app.post("user/task/{task_id}")
+def post_task(task:user_task_model):
+    user_tasks.append(task)
+    return{
+        "message":"Task Added",
+        "task": task
+    }
